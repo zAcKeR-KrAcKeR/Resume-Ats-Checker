@@ -11,6 +11,7 @@ from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
 import os
 import pytesseract
+python -m spacy download en_core_web_sm
 
 # Ensure SpaCy model is installed before loading
 model_name = "en_core_web_sm"
