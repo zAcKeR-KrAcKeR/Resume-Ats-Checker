@@ -10,8 +10,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
 import os
-import pytesseract
-python -m spacy download en_core_web_sm
+import subprocess
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en-core-web-sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 # Ensure SpaCy model is installed before loading
 model_name = "en_core_web_sm"
