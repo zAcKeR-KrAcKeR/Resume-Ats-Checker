@@ -8,5 +8,5 @@ spacy
 python-dotenv
 google-generativeai
 pdfplumber
-
+spacy
 
