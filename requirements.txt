@@ -8,7 +8,7 @@ spacy
 python-dotenv
 google-generativeai
 pdfplumber
-spacy
 spacy[transformers]
+spacy
 en-core-web-sm
 
