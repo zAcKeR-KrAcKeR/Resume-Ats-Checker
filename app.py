@@ -12,8 +12,14 @@ from dotenv import load_dotenv
 import os
 import pytesseract
 
-import pytesseract
-import os
+# Ensure the model is downloaded
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading SpaCy model...")
+    os.system("python -m spacy download en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
 
 # Set Tesseract path manually for Streamlit Cloud
 pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
