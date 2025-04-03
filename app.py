@@ -36,7 +36,7 @@ print(pytesseract.get_tesseract_version())  # Verify in Python
 load_dotenv()
 
 # Load NLP Model
-nlp = spacy.load("en_core_web_sm")
+#nlp = spacy.load("en_core_web_sm")
 
 # Google AI API Key
 GOOGLE_AI_API_KEY = os.getenv("GOOGLE_AI_API_KEY")
