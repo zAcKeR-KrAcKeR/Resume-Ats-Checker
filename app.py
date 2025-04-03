@@ -12,8 +12,17 @@ from dotenv import load_dotenv
 import os
 import pytesseract
 
-# Manually set Tesseract path
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+import pytesseract
+import os
+
+# Set Tesseract path manually for Streamlit Cloud
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+
+# Verify if Tesseract is found
+print("Tesseract Version:", pytesseract.get_tesseract_version()) 
+
+# Enable this for windows Manually set Tesseract path
+#pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 print(pytesseract.get_tesseract_version())  # Verify in Python
 
