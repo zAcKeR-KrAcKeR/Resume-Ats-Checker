@@ -12,11 +12,16 @@ from dotenv import load_dotenv
 import os
 import subprocess
 
+import spacy
+import subprocess
+
+# Ensure the model is available
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en-core-web-sm"])
+    subprocess.run(["python", "-m", "spacy", "download", "en-core-web-sm"], check=True)
     nlp = spacy.load("en_core_web_sm")
+
 
 # Ensure SpaCy model is installed before loading
 model_name = "en_core_web_sm"
