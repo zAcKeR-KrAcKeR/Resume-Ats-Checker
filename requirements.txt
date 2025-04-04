@@ -7,7 +7,7 @@ scikit-learn
 python-dotenv
 google-generativeai
 pdfplumber
-spacy   or spacy==3.7.2 (but not multiple spacy lines)
+spacy   
 pdf2image
 Pillow
 opencv-python-headless
