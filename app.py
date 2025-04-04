@@ -12,7 +12,7 @@ from PIL import Image
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from google.generativeai import configure, GenerativeModel
-from dotenv import load_dotenv
+
 
 import subprocess
 import importlib.util
@@ -54,17 +54,20 @@ print("Tesseract Version:", pytesseract.get_tesseract_version())
 print(pytesseract.get_tesseract_version())  # Verify in Python
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # Load NLP Model
 #nlp = spacy.load("en_core_web_sm")
 
 # Google AI API Key
-GOOGLE_AI_API_KEY = os.getenv("GOOGLE_AI_API_KEY")
+GOOGLE_AI_API_KEY = st.secrets.get("GOOGLE_API_KEY")
 if not GOOGLE_AI_API_KEY:
-    raise ValueError("Google AI API Key is missing! Add it to your .env file.")
+    st.error("Google API Key is missing from Streamlit Secrets!")
+    st.stop()
+
 configure(api_key=GOOGLE_AI_API_KEY)
 model = GenerativeModel("gemini-1.5-pro-002")
+
 
 # Predefined Job Descriptions
 predefined_job_descriptions = {
