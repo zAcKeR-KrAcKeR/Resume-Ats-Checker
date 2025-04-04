@@ -11,9 +11,8 @@ from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
 import os
 import subprocess
+spacy.cli.download("en_core_web_sm")
 
-import spacy
-import subprocess
 
 # Ensure the model is available
 try:
