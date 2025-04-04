@@ -60,13 +60,21 @@ print(pytesseract.get_tesseract_version())  # Verify in Python
 #nlp = spacy.load("en_core_web_sm")
 
 # Google AI API Key
+#import streamlit as st
+#from google.generativeai import configure, GenerativeModel
+
+# Get Gemini API key securely from Streamlit Secrets
 GOOGLE_AI_API_KEY = st.secrets.get("GOOGLE_API_KEY")
+
+# Show error and stop app if key isn't set
 if not GOOGLE_AI_API_KEY:
-    st.error("Google API Key is missing from Streamlit Secrets!")
+    st.error("❌ Google AI API Key is missing from Streamlit Secrets!")
     st.stop()
 
+# Configure the Gemini model
 configure(api_key=GOOGLE_AI_API_KEY)
 model = GenerativeModel("gemini-1.5-pro-002")
+
 
 
 # Predefined Job Descriptions
