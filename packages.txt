@@ -1,3 +1,5 @@
 tesseract-ocr
 libtesseract-dev
+poppler-utils  # for pdf2image
+libgl1-mesa-glx
 
