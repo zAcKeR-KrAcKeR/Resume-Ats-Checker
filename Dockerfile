@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 8501
 
 # Set the default command to run the Streamlit app
-CMD ["streamlit", "run", "main.py"]
+CMD ["streamlit", "run", "app.py"]
