@@ -88,10 +88,26 @@ predefined_job_descriptions = {
     "Business Analyst": "Strong analytical thinking, domain expertise, and experience with BI tools.",
     "Software Engineer": "Proficient in software development, algorithms, data structures, and multiple programming languages.",
     "Cloud Engineer": "Experience with AWS, Azure, GCP, cloud security, and scalable architectures.",
+
+    # Cybersecurity & Data Protection
     "Cybersecurity Analyst": "Expertise in penetration testing, network security, SIEM tools, and threat analysis.",
     "SOC Analyst": "Monitoring and analyzing security incidents, incident response, SIEM tools, and threat intelligence.",
     "Data Protection Officer": "Ensures compliance with data privacy laws (e.g., GDPR), conducts privacy impact assessments, and manages data protection strategies.",
     "Information Security Specialist": "Risk assessments, security policies, vulnerability management, and compliance with security standards like ISO 27001.",
+    "Cloud Security Engineer": "Design and implement cloud security measures, manage identity & access controls, and ensure compliance with security best practices.",
+    "Threat Intelligence Analyst": "Research and analyze cyber threats, develop threat reports, and enhance defensive security measures.",
+    "Penetration Tester": "Conduct security assessments, identify vulnerabilities, and simulate cyberattacks to test security defenses.",
+    
+    # Compliance & Risk Management
+    "Compliance Officer": "Ensures adherence to legal regulations, internal policies, and industry standards such as GDPR, HIPAA, and SOX.",
+    "Risk Analyst": "Analyzes financial, operational, and cybersecurity risks, develops risk mitigation strategies, and ensures regulatory compliance.",
+    "Regulatory Compliance Specialist": "Monitors and ensures compliance with industry regulations, including financial, healthcare, and IT security standards.",
+    "Audit & Compliance Manager": "Conducts internal audits, identifies compliance gaps, and implements corrective actions for regulatory adherence.",
+    "Ethics & Compliance Officer": "Develops corporate compliance programs, enforces ethical policies, and trains employees on regulatory requirements.",
+    "Financial Compliance Analyst": "Ensures compliance with financial regulations, anti-money laundering (AML) laws, and tax laws.",
+    "IT Compliance Analyst": "Assesses IT systems for compliance with security standards such as PCI-DSS, ISO 27001, and NIST frameworks.",
+
+    # Other Technical & Engineering Roles
     "Product Manager": "Strong understanding of market research, product lifecycle, and Agile methodologies.",
     "DevOps Engineer": "Experience with CI/CD, Kubernetes, Docker, and cloud infrastructure automation.",
     "Full Stack Developer": "Proficiency in front-end and back-end development, databases, and frameworks like React, Node.js.",
