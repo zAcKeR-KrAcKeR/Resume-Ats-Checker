@@ -1,3 +1,7 @@
+import os
+os.environ["MONGO_URI"] = "disabled"
+os.environ["MONGODB_URI"] = "disabled"
+
 import streamlit as st
 import fitz  # PyMuPDF
 import docx
@@ -9,7 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
-import os
+
 import subprocess
 spacy.cli.download("en_core_web_sm")
 import importlib.util
