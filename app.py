@@ -12,6 +12,14 @@ from dotenv import load_dotenv
 import os
 import subprocess
 spacy.cli.download("en_core_web_sm")
+import importlib.util
+
+def ensure_spacy_model():
+    model_name = "en_core_web_sm"
+    if importlib.util.find_spec(model_name) is None:
+        subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
+
+ensure_spacy_model()
 
 
 # Ensure the model is available
