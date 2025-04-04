@@ -15,33 +15,31 @@ from google.generativeai import configure, GenerativeModel
 from dotenv import load_dotenv
 
 import subprocess
-spacy.cli.download("en_core_web_sm")
 import importlib.util
 
-def ensure_spacy_model():
-    model_name = "en_core_web_sm"
-    if importlib.util.find_spec(model_name) is None:
-        subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
+##   model_name = "en_core_web_sm"
+  #  if importlib.util.find_spec(model_name) is None:
+ #       subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
 
-ensure_spacy_model()
+#ensure_spacy_model()
 
 
 # Ensure the model is available
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en-core-web-sm"], check=True)
-    nlp = spacy.load("en_core_web_sm")
+#try:
+   # nlp = spacy.load("en_core_web_sm")
+#except OSError:
+   # subprocess.run(["python", "-m", "spacy", "download", "en-core-web-sm"], check=True)
+   # nlp = spacy.load("en_core_web_sm")
 
 
 # Ensure SpaCy model is installed before loading
-model_name = "en_core_web_sm"
+#model_name = "en_core_web_sm"
 
-if not spacy.util.is_package(model_name):
-    print(f"Downloading SpaCy model: {model_name}...")
-    os.system(f"python -m spacy download {model_name}")
+#if not spacy.util.is_package(model_name):
+    #print(f"Downloading SpaCy model: {model_name}...")
+    #os.system(f"python -m spacy download {model_name}")
 
-nlp = spacy.load(model_name)
+#nlp = spacy.load(model_name)
 
 
 # Set Tesseract path manually for Streamlit Cloud
