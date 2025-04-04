@@ -4,12 +4,10 @@ python-docx
 pytesseract
 Pillow
 scikit-learn
-spacy
 python-dotenv
 google-generativeai
 pdfplumber
-spacy
-spacy==3.7.2
+spacy   or spacy==3.7.2 (but not multiple spacy lines)
 pdf2image
 Pillow
 opencv-python-headless
