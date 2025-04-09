@@ -106,6 +106,7 @@ elif user_type == "Candidate":
 
 if uploaded_file:
     extracted_text = extract_text(uploaded_file)
+    print(extracted_text)
     cleaned_text = clean_text(extracted_text)
 
     if not is_resume(cleaned_text):
