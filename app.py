@@ -25,10 +25,15 @@ model = GenerativeModel("gemini-1.5-pro-002")
 
 # --- Enhanced text extraction and image classification ---
 
-def is_probably_resume_text(text):
-    keywords = ['education', 'experience', 'skills', 'projects', 'certifications', 'summary']
-    count = sum(1 for kw in keywords if kw in text.lower())
-    return count >= 2
+def is_resume(text):
+    """
+    Check if the text seems like a resume.
+    We look for keywords typically found in resumes.
+    """
+    keywords = ["education", "experience", "skills", "projects", "certifications", "summary", "objective"]
+    found_keywords = [kw for kw in keywords if kw in text.lower()]
+    return len(found_keywords) >= 2  # Must match at least 2 keywords
+
 
 def extract_text(file):
     if file.type == "application/pdf":
@@ -94,14 +99,17 @@ elif user_type == "Candidate":
     job_profile = st.selectbox("Choose Your Job Role", list(predefined_job_descriptions.keys()))
 
 if uploaded_file:
-    raw_text = extract_text(uploaded_file)
-    if raw_text is None or len(raw_text.strip()) == 0:
-        st.error("❌ This doesn't look like a valid resume. Please upload a proper resume in PDF, DOCX, or Image format.")
+    extracted_text = extract_text(uploaded_file)
+    resume_text = clean_text(extracted_text)
+    
+    if not is_resume(extracted_text):
+        st.error("❌ This does not appear to be a resume. Please upload a valid resume document.")
     else:
-        resume_text = clean_text(raw_text)
         job_desc = job_description if user_type == "Recruiter" else predefined_job_descriptions[job_profile]
         ats_score = calculate_ats_score(resume_text, job_desc)
         st.subheader(f"📊 ATS Score: {ats_score}%")
+
+        # Generate resume improvement suggestions
         improvements = get_resume_improvements(resume_text, job_desc)
         st.subheader("📌 Resume Improvement Suggestions")
         st.write(improvements)
