@@ -109,7 +109,7 @@ if uploaded_file:
     cleaned_text = clean_text(extracted_text)
 
     if not is_resume(cleaned_text):
-        st.error("🚫 The uploaded file does not appear to be a resume. Please upload a valid resume file.")
+        st.error(" The uploaded file does not appear to be a resume. Please upload a valid resume file.")
     else:
         job_desc = job_description if user_type == "Recruiter" else predefined_job_descriptions[job_profile]
         ats_score = calculate_ats_score(cleaned_text, job_desc)
