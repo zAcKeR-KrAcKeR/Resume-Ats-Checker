@@ -80,7 +80,7 @@ def check_formatting(text):
 def calculate_ats_score(resume_text, job_desc):
     keyword_score = match_keywords(resume_text, job_desc) * 0.5
     formatting_score = check_formatting(resume_text) * 0.3
-    length_score = min(len(resume_text.split()) / 1000 * 20, 20)
+    length_score = min(len(resume_text.split()) / 600 * 20, 20)
     return round(keyword_score + formatting_score + length_score, 2)
 
 # AI-based improvement suggestions
